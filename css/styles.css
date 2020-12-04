@@ -1,0 +1,499 @@
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
+  background-image: url("images/bg.jpg") no-repeat center;
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 300;
+  line-height: 1.15;
+  color: #fff;
+  margin-top: 0px;
+}
+
+.form-wrapper {
+  height: 90vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 80px 40px 40px;
+  background: #5a757c;
+  border-radius: 10px;
+  color: #fff;
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-transform: skewX(-26deg);
+          transform: skewX(-26deg);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.form h2 {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.form .input-group {
+  position: relative;
+}
+
+.form .input-group input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.form .input-group select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  float: right;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+option {
+  position: absolute;
+  color: #ff416c;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.form .input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  pointer-events: none;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.form .input-group input:focus + label,
+.form .input-group input:valid + label {
+  -webkit-transform: translateY(-18px);
+          transform: translateY(-18px);
+  color: #201717;
+  font-size: .9rem;
+}
+
+.submit-btn {
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: auto;
+  border: none;
+  outline: none;
+  background: -webkit-gradient(linear, left top, right top, from(#264e58), to(#264e58));
+  background: linear-gradient(to right, #264e58, #264e58);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  color: #5d001e;
+  text-align: center;
+  text-decoration: none;
+}
+
+.request-form {
+  color: inherit;
+}
+
+#request-form {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+#request-form:target {
+  height: 100%;
+  opacity: 1;
+}
+
+.login-form {
+  color: inherit;
+}
+
+#login-form {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+#login-form:target {
+  height: 100%;
+  opacity: 1;
+}
+
+.register-form {
+  color: inherit;
+}
+
+#register-form {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+#register-form:target {
+  height: 100%;
+  opacity: 1;
+}
+
+/* for the close button */
+.close {
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: inherit;
+}
+
+section h1 {
+  text-align: center;
+  padding: 20px;
+  padding-top: 30px;
+  color: #111111;
+  font-size: xx-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', ' Calibri', 'Trebuchet MS', 'sans-serif';
+}
+
+.container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+  background: #5a757c;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.card {
+  width: 20%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+  margin-right: 30px;
+  margin-top: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card-header {
+  text-align: center;
+  padding: 50px 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#45656d), to(#264e58));
+  background: linear-gradient(to right, #45656d, #264e58);
+  color: #fff;
+}
+
+.card-body {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.card-body .btn {
+  display: block;
+  color: #fff;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right top, from(#45656d), to(#264e58));
+  background: linear-gradient(to right, #45656d, #264e58);
+  margin-top: 30px;
+  text-decoration: none;
+  padding: 10px 5px;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+  .heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .card {
+    width: 30%;
+  }
+}
+
+.btn {
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#45656d), to(#264e58));
+  background: linear-gradient(to right, #45656d, #264e58);
+  text-decoration: none;
+  padding: 10px 5px;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+table {
+  margin: 0 auto;
+  font-size: large;
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: xx-large;
+  font-family: 'Gill Sans', 'Gill Sans MT',   ' Calibri', 'Trebuchet MS', 'sans-serif';
+}
+
+td {
+  background-color: #E4F5D4;
+  border: 1px solid black;
+}
+
+th,
+td {
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+td {
+  font-weight: lighter;
+}
+
+.footer {
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0px 0px;
+  background-color: #264e58;
+  color: white;
+  text-align: center;
+}
+
+.header {
+  overflow: hidden;
+  background: #264e58;
+  padding: 20px 10px;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #d1c5c5;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+/*# sourceMappingURL=styles.css.map */
